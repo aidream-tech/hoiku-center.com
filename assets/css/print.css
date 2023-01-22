@@ -1,0 +1,116 @@
+@charset "UTF-8";
+/* ==================================================================
+ * CSS Information
+ * Description: Print - 印刷
+ * Modified: 2011-05-01
+ * Copyright(C) 2011 AI DREAM.
+================================================================== */
+
+@media print {
+
+html, body, div, h1, h2, h3, h4, h5, h6, p, blockpuote, pre, address, ul, ol, li, dl, dt, dd, table, th, td, form, input, fieldset {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-size: 12pt;
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS P Gothic", sans-serif;
+	/* font-family:"ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "平成明朝", "Heisei Mincho", "MS P明朝", "MS P Mincho", serif; */
+	background-color: #FFF;
+	background-image: none;
+}
+
+address, em, caption, cite, code, dfn, h1, h2, h3, h4, h5, h6, th, td, var {
+	font-style: normal;
+	font-weight: normal;
+}
+
+/* テーブル */
+/*
+Firefoxでは、テーブルが複数ページにまたがる場合、thead, tfootやtable要素の上下のボーダーを次のページにも表示してくれる。
+theadを使っていない場合は、ページごとにtable要素の枠線を表示されるとわかりにくくなってしまう。
+そのような理由から、できるだけth, tdだけでボーダーを使う。
+*/
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;/* 親要素で幅を指定すること。 */
+}
+
+th, td {
+	font-size: 10.5pt;
+	text-align: left;
+	vertical-align: top;
+	border: 1px solid #CCC;
+	padding: 6px 8px;/* セル内の余白は大きめにとる。 */
+}
+
+/* 行間をおおめにとる。 */
+p, dt, dd, th, td, li {
+	line-height: 1.8;
+}
+
+/* 段落の上下に余白をとる。 */
+p {
+	margin: 12pt 0;
+}
+
+/* リストの行頭記号を非表示化。 */
+ul, ol {
+	list-style: none;
+}
+
+/* 画像のリンクボーダーの非表示化、画像と文字の下辺を統一。 */
+img {
+	border: 0;
+	vertical-align: bottom;
+}
+
+/* 「.internal」を指定したサイト内リンクの後に、URLを出力。 */
+a.internal:after {
+	content: " ( http://sample.com/" attr(href) " ) ";
+}
+
+/* 「.external」を指定した外部リンクの後に、URLを出力。
+次の「a[href^="http://"]:after」をサポートしていないブラウザ用。*/
+a.external:after {
+	content: "( " attr(href) " )";
+}
+
+/* 「http://」からはじまる外部リンクの後に、URLを出力。
+（Firefox3、Safari3、Opera9.5、Google Chromeなどのブラウザでサポートしている。） */
+a[href^="http://"]:after {
+ content: "( " attr(href) " )";
+}
+
+/* ロゴにリンクが貼られている場合、URLを非表示。 */
+.logo a:after {
+	content: "";
+}
+
+/* 改ページする箇所に配置する非表示の水平線 */
+hr.page-break {
+	page-break-before: always;
+	visibility: hidden;
+	height: 0;
+}
+
+/* 印刷に不要な内容を非表示化 */
+.non-print {
+	display:none;
+}
+
+/* Opera9.5等、一部のブラウザで対応 */
+@page {
+margin: 10mm;
+}
+
+
+/*
+#sub {
+	display: none;
+}
+*/
+
+}
