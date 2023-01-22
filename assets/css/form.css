@@ -1,0 +1,77 @@
+.validation_error {
+	color: #F00;
+	display: block;
+}
+
+.ime {
+	ime-mode: disabled;
+}
+
+table.form {
+	border: solid 1px #CCC;
+	width: 94%;
+	margin: 0 0 20px;
+}
+
+table.form th,table.form td {
+	border-top: dashed 1px #CCC;
+	border-left: solid 1px #CCC;
+	border-right: solid 1px #CCC;
+	font-size: 13px;
+	line-height: 1.7;
+	padding: 8px 5px;
+}
+
+table.form th {
+	vertical-align: top;
+	width: 100px;
+}
+
+input {
+	padding: 4px;
+}
+
+input.long {
+	width: 460px;
+}
+
+input.middle {
+	width: 220px;
+}
+
+input.short {
+	width: 60px;
+}
+
+span.address {
+	display: inline-block;
+	width: 6em;
+}
+
+span.standpoint {
+	display: inline-block;
+	width: 7.5em;
+}
+
+span.lecture {
+	display: inline-block;
+	width: 25em;
+}
+
+div.submit-area {
+	text-align: center;
+	margin: 30px 0;
+	width: 600px;
+}
+
+.textarea1 {
+	width: 460px;
+	padding: 4px;
+}
+
+.font-large {
+	font-size: 16px;
+}
+.error {
+	color: #da4453;
+}
